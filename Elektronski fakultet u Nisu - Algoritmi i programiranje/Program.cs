@@ -389,11 +389,167 @@ namespace zbirka___C_sharp
 
 			Console.WriteLine();
 
-			// Zadatak 1.21  */
+			// Zadatak 1.21  
+
+			int input, num, count = 0, sum = 0;
+
+			Console.WriteLine("Unesite broj: ");
+			input = Convert.ToInt32(Console.ReadLine());
+
+
+			while (input > 0)
+			{
+				num = input % 10;
+				sum += num;
+
+				input /= 10;
+				count++;
+			}
+
+			Console.WriteLine("Uneti broj ima  " + count + " cifara" + " i njhov zbir je: " + sum);
 
 
 
+			// Zadatak 1.22 
 
+
+			int input, num1, num2, num3, sum = 0;
+
+			Console.WriteLine("Unesite zeljeni broj: ");
+			input = Convert.ToInt32(Console.ReadLine());
+
+			for (int i = 100; i <= 999; i++)
+			{
+
+				num3 = i % 10;
+				num2 = (i / 10) % 10;
+				num1 = i - (num2 * 10) - num3;
+
+				sum = num1 + num2 + num3;
+
+				if (sum % input == 0)
+				{
+					Console.Write(i + ", ");
+				}
+
+			}
+
+			// Zadatak 1.23  
+
+
+			int input, num, sum = 0;
+
+			Console.WriteLine("Unesite broj: ");
+			input = Convert.ToInt32(Console.ReadLine());
+
+
+			while (input > 0)
+			{
+				num = input % 10;
+				sum += num * num;
+
+				input /= 10;
+				
+			}
+
+			Console.WriteLine("Uneti broj je  " + input + " i zbir kvadrata njegovih cifata je: " + sum);
+
+
+			// Zadatak 1.25  
+
+			string msg = String.Empty;
+
+			Console.WriteLine("Unesite jedan karakter: ");
+			char input = Convert.ToChar(Console.ReadLine());
+
+			if (input >= 'a' && input < 'z')
+			{
+				msg = "uneli ste malo slovo";
+			}
+			else if (input >= 'A' && input < 'Z')
+			{
+				msg = "uneli ste VELIKO slovo";
+			}
+			else if (input >= 'A' && input < 'Z')
+			{
+				msg = "uneli ste VELIKO slovo";
+			}
+			else if (input >= '0' && input < '9')
+			{
+				msg = "uneli ste broj";
+			}
+
+			else 
+			{
+				msg = "uneli ste specijalni karakter";
+			}
+			Console.WriteLine(msg);
+
+
+			// Zadatak 1.26  
+
+
+			int num1, num2, rez;
+			string operacija = String.Empty;
+
+			Console.WriteLine("Unesite broj: ");
+			num1 = Convert.ToInt32(Console.ReadLine());
+
+			Console.WriteLine("Unesite broj: ");
+			num2 = Convert.ToInt32(Console.ReadLine());
+
+			Console.WriteLine("Unesite operaciju: ");
+			operacija = Console.ReadLine();
+
+
+
+			switch (operacija)
+			{
+				case "-": rez = num1 - num2; break;
+
+				case "+": rez = num1 + num2; break;
+
+				case "*": rez = num1 * num2; break;
+
+				case "/": rez = num1 / num2; break;
+
+				default:
+					rez = 0;
+					break;
+			}
+
+			if (rez == 0)
+			{
+				Console.WriteLine("greska");
+			}
+			else
+			{
+				Console.WriteLine(rez);
+			}
+
+
+
+			// Zadatak 1.29 
+
+
+
+			int num, a = 1, b = 1, c;
+
+			Console.WriteLine("Unesite broj: ");
+			num = Convert.ToInt32(Console.ReadLine());
+
+
+			for (int i = 0; i < num; i++)
+			{
+				c = a + b;
+				Console.Write(c + ", ");
+
+				a = b;
+				b = c;
+			}
+
+
+			// Zadatak 2.36   */
 
 
 
