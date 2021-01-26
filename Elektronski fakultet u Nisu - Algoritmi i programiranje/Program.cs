@@ -654,7 +654,143 @@ namespace zbirka___C_sharp
 				Console.Write(numbers1[i] + ", ");
 			}
 
-			// Zadatak 2.40   */
+			// Zadatak 2.40   
+
+
+			List<int> numbers = new List<int>() { 2, 4, 5, 6, 8 };
+
+			List<int> numb = new List<int>() { 4, 4, 6, 8, 9, 3, 1, 11, 13, 15 };
+			numbers.AddRange(numb);
+
+			numbers.Sort();
+
+			foreach (var item in numbers)
+			{
+				Console.Write(item + ", ");
+			}
+
+
+        	// Zadatak 2.41  
+
+
+			List<int> numbers = new List<int>();
+
+			Console.WriteLine("Unesite zeljenu velicinu niza: ");
+
+			int length = Convert.ToInt32(Console.ReadLine());
+
+			for (int i = 0; i < length; i++)
+			{
+				Console.WriteLine("Unesite clan niza:  ");
+				numbers.Add(Convert.ToInt32(Console.ReadLine()));
+			}
+
+			Console.Write("Vas niz brojeva je:  ");
+			foreach (var num in numbers)
+			{
+				Console.Write(num + ", ");
+			}
+
+			Console.WriteLine("unesite pocetni indeks za brisanje");
+			int index = Convert.ToInt32(Console.ReadLine());
+
+
+			Console.WriteLine("Koliko clanova niza za brisanje?");
+			int del = Convert.ToInt32(Console.ReadLine());
+
+			if (index >= 0 && del + index - 1 < numbers.Count)
+			{
+				for (int i = 0; i < del; i++)
+				{
+					numbers.RemoveAt(index);
+				}
+
+				Console.Write("Vas niz brojeva je:  ");
+				foreach (var num in numbers)
+				{
+					Console.Write(num + ", ");
+				}
+			}
+			else
+			{
+				Console.WriteLine("[ERROR]");
+			}
+
+
+			// Zadatak 2.42  -- selection sort
+
+			int[] numbers = { 4, -1,6, 1, 3, 2, 0 };
+
+
+			for (int i = 0; i < numbers.Length; i++)
+			{
+				for (int j = i + 1; j < numbers.Length; j++)
+				{
+					if (numbers[i] > numbers[j])
+					{
+						int pom = numbers[i];
+						numbers[i] = numbers[j];
+						numbers[j] = pom;
+					}
+				}
+			}
+
+			foreach (var item in numbers)
+			{
+				Console.Write(item + ", ");
+			}
+
+			// Zadatak 2.43  -- insertion sort 
+
+
+
+			List<int> numbers = new List<int>() { 4, -1, 6, 1, 3, 2, 0 };
+
+
+			int pom, j;
+			for (int i = 1; i < numbers.Count; i++)
+			{
+				pom = numbers[i];
+				j = i - 1;
+
+				while (j >= 0 && numbers[j] > pom)
+				{
+					numbers[j + 1] = numbers[j];
+					j = j - 1;
+				}
+				numbers[j + 1] = pom;
+			}
+
+			foreach (var item in numbers)
+			{
+				Console.Write(item + ", ");
+			}
+
+			// Zadatak 2.44  -- bubble sort 
+
+
+			int[] numbers = { 4, -1, 6, 1, 3, 2, 0 };
+
+			for (int i = 0; i < numbers.Length - 1; i++)
+			{
+				for (int j = 0; j < numbers.Length - i - 1; j++)
+				{
+					if (numbers[j] > numbers[j + 1])
+					{
+						int pom = numbers[j];
+						numbers[j] = numbers[j + 1];
+						numbers[j + 1] = pom;
+					}
+				}
+			}
+
+			foreach (var item in numbers)
+			{
+				Console.Write(item + ", ");
+			}
+
+			// Zadatak 2.45 */
+
 
 		}
 	}
