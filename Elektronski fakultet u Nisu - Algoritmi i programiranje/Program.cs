@@ -549,10 +549,112 @@ namespace zbirka___C_sharp
 			}
 
 
-			// Zadatak 2.36   */
+			// Zadatak 2.36   
+			
+			int[] numbers = { 222, 5, 22, 7, 10 };
+			int index = 0;
+			int max = numbers[index];
+			int maxIndex = index;
+
+			for (index = 1; index < numbers.Length; index++)
+			{
+				if (numbers[index] > max)
+				{
+					max = numbers[index];
+					maxIndex = index;
+				}
+			}
+			Console.WriteLine("max: " + max + " index: " + maxIndex);
+
+	         // Zadatak 2.37   
 
 
+			int[] numbers = { 222, 5, 22, 7, 10 };
+			int index = 0;
+			int max = numbers[index];
+			int maxIndex = index;
+			int min = numbers[index];
+			int minIndex = index;
 
+			for (index = 1; index < numbers.Length; index++)
+			{
+				if (numbers[index] > max)
+				{
+					max = numbers[index];
+					maxIndex = index;
+				}
+
+				if (numbers[index] < min)
+				{
+					min = numbers[index];
+					minIndex = index;
+				}
+			}
+
+			int pom = numbers[minIndex];
+			numbers[minIndex] = numbers[maxIndex];
+			numbers[maxIndex] = pom;
+
+			for (int i = 0; i < numbers.Length; i++)
+			{
+				Console.Write(numbers[i] + ", ");
+			}
+
+	        // Zadatak 2.38  
+
+
+			int[] numbers = { 23, 45, 67, 89 };
+			int pom = numbers[numbers.Length-1];
+
+			for (int i =numbers.Length - 1; i > 0; i--)
+			{
+				numbers[i] = numbers[i - 1];
+			}
+				numbers[0] = pom;
+
+			for (int i = 0; i < numbers.Length; i++)
+			{
+				Console.Write(numbers[i] + ", ");
+			}
+
+	        // Zadatak 2.39   
+
+			Console.WriteLine("Unesite velicinu niza: ");
+			int vel = Convert.ToInt32(Console.ReadLine());
+
+			int[] numbers = new int[vel];
+			for (int i = 0; i < numbers.Length; i++)
+			{
+				Console.WriteLine("Unesite element: ");
+				numbers[i] = (Convert.ToInt32(Console.ReadLine()));
+			}
+
+			Console.WriteLine("Unesite NOVI element: ");
+			int num = Convert.ToInt32(Console.ReadLine());
+
+			Console.WriteLine("Unesite poziciju: ");
+			int poz = Convert.ToInt32(Console.ReadLine());
+
+
+			int[] numbers1 = new int[vel+1];
+
+			for (int i = 0; i < poz-1; i++)
+			{
+				numbers1[i] = numbers[i];
+			}
+			numbers1[poz - 1] = num;
+
+			for (int i = poz; i < numbers1.Length; i++) 
+			{
+				numbers1[i] = numbers[i-1];
+			}
+
+			for (int i = 0; i < numbers1.Length; i++)
+			{
+				Console.Write(numbers1[i] + ", ");
+			}
+
+			// Zadatak 2.40   */
 
 		}
 	}
